@@ -1,0 +1,35 @@
+server:
+  applicationConnectors:
+    - type: https
+      port: 8443
+      keyStorePath: C:\Users\ABENEZER\IdeaProjects\votingpoles\keystore.jks
+      keyStorePassword: 12345678
+  adminConnectors:
+    - type: https
+      port: 8444
+      keyStorePath: C:\Users\ABENEZER\IdeaProjects\votingpoles\keystore.jks
+      keyStorePassword: 12345678
+  allowedMethods:
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
+  registerDefaultExceptionMappers: true
+
+logging:
+  level: INFO
+  loggers:
+    org.example: DEBUG
+
+# Custom configuration properties
+dateFormat: "yyyy-MM-dd"
+mongoUri: "mongodb://localhost:27017/MartialPeak"
+
+# Basic authentication credentials
+login: "admin"
+password: "adminpassword" # Replace with a secure password
+
+
+# java -jar target\VotingPoles-1.0-SNAPSHOT.jar server config.yml
